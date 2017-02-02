@@ -1,8 +1,8 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const size    = "36"; //number of colors
+const size    = "36"; //number of colors, more makes a smoother transition
 const rainbow = new Array(size);
-
+//the math
 for (var i=0; i<size; i++) {
   var red   = sin_to_hex(i, 0 * Math.PI * 2/3); // 0   deg
   var blue  = sin_to_hex(i, 1 * Math.PI * 2/3); // 120 deg
@@ -37,7 +37,7 @@ function changeColor() {
 bot.on("ready", () => {
     console.log("I am ready!");
     bot.user.setGame("Partying Hard!");
-    setInterval(changeColor, 600);
+    setInterval(changeColor, 600); //set the speed(it is set to 0.6 seconds)!
 });
 
 bot.login(""); //get a bot token from discord developers page and put it here
